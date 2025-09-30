@@ -16,7 +16,7 @@ st.markdown("""
 
 # ===== LANDING PAGE =====
 st.title("🌱 Waste Food to Energy – IoT Automation")
-st.image("data/img1.png", use_container_width=True)
+st.image("data/img1.png")
 
 st.markdown("""
 ## Latar Belakang
@@ -28,7 +28,7 @@ Limbah makanan adalah salah satu penyumbang emisi karbon terbesar. Dalam pitch i
 - Kurangnya sistem monitoring otomatis membuat operator kesulitan mengontrol.
 """)
 
-st.image("data/img2.png", caption="Masalah utama yang diidentifikasi", use_container_width=True)
+st.image("data/img2.png", caption="Masalah utama yang diidentifikasi")
 
 st.markdown("""
 ## Solusi
@@ -38,7 +38,7 @@ Menggunakan **IoT system** untuk:
 - Menyediakan dashboard terintegrasi yang user-friendly.
 """)
 
-st.image("data/img3.png", caption="Solusi IoT dengan kontrol otomatis pH", use_container_width=True)
+st.image("data/img3.png", caption="Solusi IoT dengan kontrol otomatis pH")
 
 # ===== LOAD DATA =====
 df = load_data()
@@ -79,7 +79,7 @@ st.markdown("""
 - Pengembangan AI untuk prediksi feeding.
 """)
 
-st.image("data/img4.png", caption="Roadmap implementasi", use_container_width=True)
+st.image("data/img4.png", caption="Roadmap implementasi")
 
 st.markdown("""
 ---
