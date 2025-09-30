@@ -3,6 +3,7 @@ import pandas as pd
 from src.data_loader import load_data
 from src.charts import plot_ph, plot_gas, plot_temperature
 from src.utils import filter_data
+import base64
 
 st.set_page_config(page_title="Waste-to-Energy IoT Dashboard", layout="wide")
 
@@ -81,8 +82,28 @@ st.markdown("""
 
 st.image("data/img4.png", caption="Roadmap implementasi")
 
+# ===== Grand Design Section =====
+st.markdown("## 📘 IoT Grand Design")
+
 st.markdown("""
----
-📌 Dashboard ini dirancang agar **narasi dari awal sampai akhir jelas**: mulai dari masalah, solusi, implementasi IoT, hingga data simulasi dan dampak.  
-Semua visual & konten diambil dari pitch PDF.
+### Key Points
+- **Objectives:** Maintain digester pH at 6.8–7.2 with automatic actions if thresholds are crossed.  
+- **Architecture:** Sensors → Controller → MQTT → Database → Dashboard → Alerts.  
+- **Control Logic:**  
+  • Recovery (pH < 6.6): Stop feeding, buffer dosing.  
+  • Steady (6.8–7.2): Micro-feeding + cyclic agitation.  
+  • Underfed (pH > 7.5): Incremental feeding.  
+- **Roadmap:** MVP with ESP32 → Pilot scale with Node-RED/InfluxDB → Industrial with PLC & AI.
 """)
+
+# Show block diagram image
+st.image("data/block_diagram.png", caption="IoT System Block Diagram")
+
+# Button to display PDF in popup (iframe)
+with open("data/IoT_Grand_Design.pdf", "rb") as f:
+    pdf_bytes = f.read()
+    b64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
+
+if st.button("📄 View Full Grand Design PDF"):
+    pdf_display = f'<iframe src="data:application/pdf;base64,{b64_pdf}" width="100%" height="600" type="application/pdf"></iframe>'
+    st.markdown(pdf_display, unsafe_allow_html=True)
