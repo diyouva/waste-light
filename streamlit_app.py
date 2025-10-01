@@ -44,7 +44,7 @@ st.image("data/img3.png", caption="Solusi IoT dengan kontrol otomatis pH")
 # ===== LOAD DATA =====
 df = load_data()
 
-st.markdown("## Monitoring Data (Dummy Simulation)")
+st.markdown("## Monitoring Dashboard")
 
 # Sidebar Filters
 st.sidebar.header("Filters")
